@@ -7,11 +7,6 @@ __pycache__/
 # Virtualenv
 venv/
 
-# Behave reports
-reports/
-reports/allure-results/
-reports/allure-report/
-
 # Logs
 *.log
 
