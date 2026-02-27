@@ -18,3 +18,10 @@ class BasePage:
         element = self.waits.until_visible(locator)
         element.clear()
         element.send_keys(text)
+
+    def get_text(self, locator):
+        element = self.waits.until_visible(locator)
+        return element.text
+
+    def find_element(self, locator):
+        return self.waits.until_visible(locator)
