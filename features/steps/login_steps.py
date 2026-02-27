@@ -3,7 +3,7 @@ from pages.login_page import LoginPage
 from time import sleep
 from core.config import Config
 
-import logging
+import logging, allure
 
 log = logging.getLogger(__name__)
 
@@ -41,5 +41,9 @@ def step_click_login(context):
 @then("ele deve ser redirecionado para a página de produtos")
 def step_validate_inventory(context):
     sleep(5)
+
+    screenshot = context.driver.get_screenshot_as_png()
+
+    allure.attach(screenshot, name="Login", attachment_type=allure.attachment_type.PNG)
 
     assert "inventory" in context.driver.current_url
